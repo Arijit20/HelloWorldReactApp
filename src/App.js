@@ -17,7 +17,13 @@ class App extends React.Component {
   }
 
   onNameChannge = (event) => {
-    this.setState({title: event.target.value})
+    const nameRegex = RegExp("^[A-Z]{1}[a-zA-Z\\s]{2,}$");
+    if(nameRegex.test(event.target.value)){
+      this.setState({title: event.target.value});
+      this.setState({nameError: ""});
+    }else{
+      this.setState({nameError: "incorrect name"});
+    }
   }
 
   render (){
@@ -29,6 +35,7 @@ class App extends React.Component {
       </div>
       <div className = "text-box">
       <input onChange = {this.onNameChannge}/>
+    <span className = "error-output">{this.state.nameError}</span>
     </div>
     </div>
     );
