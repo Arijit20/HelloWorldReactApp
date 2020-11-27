@@ -28,15 +28,34 @@ class App extends React.Component {
 
   render (){
     return (
-      <div>
-      <div>
-        <h1>hello {this.state.title}</h1>
-        <img src = {logo} onClick={this.onClick} alt = "logo"/>
+      <div className="app-main">
+      <div className="main">
+        <div>
+          <h1>Hi {this.state.title}, Welcome to BridgeLabz</h1>
+          <img src = {logo} onClick = {this.onClick} alt = "logo"/>
+        </div>
+        <div className="text-box">
+        <input onChange = {this.onNameChannge}/>
+        <span className = "error-output">{this.state.nameError}</span>
+        </div>
+        <p>
+          <b>Available Courses :</b>
+        </p>
+        <ul>
+          <li>Java</li>
+          <li>Python</li>
+          <li>Html</li>
+        </ul>
+        <p>
+          To know more about us visit:
+          <a href = "https://www.bridgelabz.com" target = "_blank">Bridgelabz</a>
+        </p>
+        <p>
+          <b>
+            <i>Employeebility to All</i>
+          </b>
+        </p>
       </div>
-      <div className = "text-box">
-      <input onChange = {this.onNameChannge}/>
-    <span className = "error-output">{this.state.nameError}</span>
-    </div>
     </div>
     );
   }
